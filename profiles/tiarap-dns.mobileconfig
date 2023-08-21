@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>PayloadDisplayName</key>
+    <string>Tiarap DNS</string>
+    <key>PayloadDescription</key>
+    <string>Configures Tiarap's secure DNS resolver on this device.</string>
+    <key>PayloadIdentifier</key>
+    <string>com.apple.profile.ff2e1a16-386a-40a7-85f6-71ac2b0aa81c</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>ff2e1a16-386a-40a7-85f6-71ac2b0aa81c</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadContent</key>
+    <array>
+      <!-- Tiarap DNS (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>Tiarap DNS (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.444d0a09-f8a6-4ce5-b1e4-b31d0ea540cb</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>444d0a09-f8a6-4ce5-b1e4-b31d0ea540cb</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerURL</key>
+          <string>https://doh.tiar.app/dns-query</string>
+        </dict>
+      </dict>
+      <!-- Tiarap DNS (DoT) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>Tiarap DNS (DoT)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.59a01ebc-b823-4229-8c15-472d3361cf88</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>59a01ebc-b823-4229-8c15-472d3361cf88</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>TLS</string>
+          <key>ServerName</key>
+          <string>dot.tiar.app</string>
+        </dict>
+      </dict>
+    </array>
+  </dict>
+</plist>

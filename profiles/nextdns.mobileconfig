@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>PayloadDisplayName</key>
+    <string>NextDNS</string>
+    <key>PayloadDescription</key>
+    <string>Configures NextDNS's secure DNS resolver on this device.</string>
+    <key>PayloadIdentifier</key>
+    <string>com.apple.profile.bffa789a-cc14-41cf-87dd-d6aa97b9cd5f</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>bffa789a-cc14-41cf-87dd-d6aa97b9cd5f</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadContent</key>
+    <array>
+      <!-- NextDNS (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>NextDNS (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.7a3345f2-eed6-41d7-a824-e93c36642ac2</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>7a3345f2-eed6-41d7-a824-e93c36642ac2</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerURL</key>
+          <string>https://dns.nextdns.io/dns-query</string>
+        </dict>
+      </dict>
+      <!-- NextDNS (DoT) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>NextDNS (DoT)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.f7f539c9-2aae-40d8-99ff-4085902d8bdb</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>f7f539c9-2aae-40d8-99ff-4085902d8bdb</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>TLS</string>
+          <key>ServerName</key>
+          <string>dns.nextdns.io</string>
+        </dict>
+      </dict>
+      <!-- NextDNS Anycast (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>NextDNS Anycast (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.cec164b9-7f4c-41b9-a0f2-c08d6dc2d278</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>cec164b9-7f4c-41b9-a0f2-c08d6dc2d278</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerURL</key>
+          <string>https://anycast.dns.nextdns.io/dns-query</string>
+        </dict>
+      </dict>
+      <!-- NextDNS Anycast (DoT) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>NextDNS Anycast (DoT)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.f90db2b8-512c-4ccc-88d5-fd4a3735e0c9</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>f90db2b8-512c-4ccc-88d5-fd4a3735e0c9</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>TLS</string>
+          <key>ServerName</key>
+          <string>anycast.dns.nextdns.io</string>
+        </dict>
+      </dict>
+    </array>
+  </dict>
+</plist>

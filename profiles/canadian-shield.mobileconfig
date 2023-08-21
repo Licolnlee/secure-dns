@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>PayloadDisplayName</key>
+    <string>Canadian Shield</string>
+    <key>PayloadDescription</key>
+    <string>Configures Canadian Internet Registration Authority (CIRA)'s secure DNS resolver on this
+      device.</string>
+    <key>PayloadIdentifier</key>
+    <string>com.apple.profile.b66203ce-f725-4623-9868-116a848be1ee</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>b66203ce-f725-4623-9868-116a848be1ee</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadContent</key>
+    <array>
+      <!-- Canadian Shield Private (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>Canadian Shield Private (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.d0388ba2-9953-476b-91e4-020fcb0e8f3b</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>d0388ba2-9953-476b-91e4-020fcb0e8f3b</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerAddresses</key>
+          <array>
+            <string>2620:10A:80BB::10</string>
+            <string>2620:10A:80BC::10</string>
+            <string>149.112.121.10</string>
+            <string>149.112.122.10</string>
+          </array>
+          <key>ServerURL</key>
+          <string>https://private.canadianshield.cira.ca/dns-query</string>
+        </dict>
+      </dict>
+      <!-- Canadian Shield Private (DoT) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>Canadian Shield Private (DoT)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.74ba0725-c9db-4fc5-8038-2fddc378b073</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>74ba0725-c9db-4fc5-8038-2fddc378b073</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>TLS</string>
+          <key>ServerAddresses</key>
+          <array>
+            <string>2620:10A:80BB::10</string>
+            <string>2620:10A:80BC::10</string>
+            <string>149.112.121.10</string>
+            <string>149.112.122.10</string>
+          </array>
+          <key>ServerName</key>
+          <string>private.canadianshield.cira.ca</string>
+        </dict>
+      </dict>
+      <!-- Canadian Shield Protected (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>Canadian Shield Protected (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.db3cdbb8-de3c-4739-8975-13b6d21c572a</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>db3cdbb8-de3c-4739-8975-13b6d21c572a</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerAddresses</key>
+          <array>
+            <string>2620:10A:80BB::20</string>
+            <string>2620:10A:80BC::20</string>
+            <string>149.112.121.20</string>
+            <string>149.112.122.20</string>
+          </array>
+          <key>ServerURL</key>
+          <string>https://protected.canadianshield.cira.ca/dns-query</string>
+        </dict>
+      </dict>
+      <!-- Canadian Shield Protected (DoT) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>Canadian Shield Protected (DoT)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.9e05c1c1-9ef2-4e1e-9647-621797b7ef67</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>9e05c1c1-9ef2-4e1e-9647-621797b7ef67</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>TLS</string>
+          <key>ServerAddresses</key>
+          <array>
+            <string>2620:10A:80BB::20</string>
+            <string>2620:10A:80BC::20</string>
+            <string>149.112.121.20</string>
+            <string>149.112.122.20</string>
+          </array>
+          <key>ServerName</key>
+          <string>protected.canadianshield.cira.ca</string>
+        </dict>
+      </dict>
+      <!-- Canadian Shield Family (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>Canadian Shield Family (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.7f184424-abad-4c17-9f17-11ad41c49537</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>7f184424-abad-4c17-9f17-11ad41c49537</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerAddresses</key>
+          <array>
+            <string>2620:10A:80BB::30</string>
+            <string>2620:10A:80BC::30</string>
+            <string>149.112.121.30</string>
+            <string>149.112.122.30</string>
+          </array>
+          <key>ServerURL</key>
+          <string>https://family.canadianshield.cira.ca/dns-query</string>
+        </dict>
+      </dict>
+      <!-- Canadian Shield Family (DoT) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>Canadian Shield Family (DoT)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.e22162d4-ceca-4ccb-b3a4-af55b4bcfab4</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>e22162d4-ceca-4ccb-b3a4-af55b4bcfab4</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>TLS</string>
+          <key>ServerAddresses</key>
+          <array>
+            <string>2620:10A:80BB::30</string>
+            <string>2620:10A:80BC::30</string>
+            <string>149.112.121.30</string>
+            <string>149.112.122.30</string>
+          </array>
+          <key>ServerName</key>
+          <string>family.canadianshield.cira.ca</string>
+        </dict>
+      </dict>
+    </array>
+  </dict>
+</plist>

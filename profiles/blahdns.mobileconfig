@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>PayloadDisplayName</key>
+    <string>BlahDNS</string>
+    <key>PayloadDescription</key>
+    <string>Configures ookangzheng's secure DNS resolver on this device.</string>
+    <key>PayloadIdentifier</key>
+    <string>com.apple.profile.a4678fda-ffb1-4758-9c36-8d72164215b8</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>a4678fda-ffb1-4758-9c36-8d72164215b8</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadContent</key>
+    <array>
+      <!-- BlahDNS Finland (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>BlahDNS Finland (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.e36a8ac3-e3e7-400a-a60f-0b85c150c8f1</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>e36a8ac3-e3e7-400a-a60f-0b85c150c8f1</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerURL</key>
+          <string>https://doh-fi.blahdns.com/dns-query</string>
+        </dict>
+      </dict>
+      <!-- BlahDNS Finland (DoT) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>BlahDNS Finland (DoT)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.003104d4-ad3b-4e7d-b9be-d94286318111</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>003104d4-ad3b-4e7d-b9be-d94286318111</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>TLS</string>
+          <key>ServerName</key>
+          <string>dot-fi.blahdns.com</string>
+        </dict>
+      </dict>
+      <!-- BlahDNS Germany (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>BlahDNS Germany (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.e7faeb34-fd2b-4ce4-80d1-2b656e4bb87d</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>e7faeb34-fd2b-4ce4-80d1-2b656e4bb87d</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerURL</key>
+          <string>https://doh-de.blahdns.com/dns-query</string>
+        </dict>
+      </dict>
+      <!-- BlahDNS Germany (DoT) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>BlahDNS Germany (DoT)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.aaf1b87f-a3df-4569-97ee-2adddc82b321</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>aaf1b87f-a3df-4569-97ee-2adddc82b321</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>TLS</string>
+          <key>ServerName</key>
+          <string>dot-de.blahdns.com</string>
+        </dict>
+      </dict>
+      <!-- BlahDNS Japan (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>BlahDNS Japan (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.7bd8a913-1380-4afb-96e2-33291c79157c</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>7bd8a913-1380-4afb-96e2-33291c79157c</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerURL</key>
+          <string>https://doh-jp.blahdns.com/dns-query</string>
+        </dict>
+      </dict>
+      <!-- BlahDNS Japan (DoT) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>BlahDNS Japan (DoT)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.2bc5fdc9-b9f9-4291-9d79-ffffbe4a0de5</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>2bc5fdc9-b9f9-4291-9d79-ffffbe4a0de5</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>TLS</string>
+          <key>ServerName</key>
+          <string>dot-jp.blahdns.com</string>
+        </dict>
+      </dict>
+      <!-- BlahDNS Singapore (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>BlahDNS Singapore (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.e0939d9b-7509-47cf-a71e-74ad0edfc35e</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>e0939d9b-7509-47cf-a71e-74ad0edfc35e</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerURL</key>
+          <string>https://doh-sg.blahdns.com/dns-query</string>
+        </dict>
+      </dict>
+      <!-- BlahDNS Singapore (DoT) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>BlahDNS Singapore (DoT)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.ee09f137-f9a7-45bc-9868-8f6bb082f9c4</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>ee09f137-f9a7-45bc-9868-8f6bb082f9c4</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>TLS</string>
+          <key>ServerName</key>
+          <string>dot-sg.blahdns.com</string>
+        </dict>
+      </dict>
+      <!-- BlahDNS Switzerland (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>BlahDNS Switzerland (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.e1572f6e-db52-4225-8509-f52f942c0f19</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>e1572f6e-db52-4225-8509-f52f942c0f19</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerURL</key>
+          <string>https://doh-ch.blahdns.com/dns-query</string>
+        </dict>
+      </dict>
+      <!-- BlahDNS Switzerland (DoT) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>BlahDNS Switzerland (DoT)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.ca602aaa-637d-472a-86b6-fd594627052a</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>ca602aaa-637d-472a-86b6-fd594627052a</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>TLS</string>
+          <key>ServerName</key>
+          <string>dot-ch.blahdns.com</string>
+        </dict>
+      </dict>
+    </array>
+  </dict>
+</plist>

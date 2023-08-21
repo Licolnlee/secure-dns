@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>PayloadDisplayName</key>
+    <string>Alekberg DNS</string>
+    <key>PayloadDescription</key>
+    <string>Configures Alekberg's secure DNS resolver on this device.</string>
+    <key>PayloadIdentifier</key>
+    <string>com.apple.profile.2d1962cf-8ab2-4fec-a074-32742ba79345</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>2d1962cf-8ab2-4fec-a074-32742ba79345</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadContent</key>
+    <array>
+      <!-- Alekberg DNS Netherlands (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>Alekberg DNS Netherlands (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.7aa7560b-1c7c-44a9-8629-7354b7756d2a</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>7aa7560b-1c7c-44a9-8629-7354b7756d2a</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerURL</key>
+          <string>https://dnsnl.alekberg.net/dns-query</string>
+        </dict>
+      </dict>
+      <!-- Alekberg DNS Sweden (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>Alekberg DNS Sweden (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.1808de0b-0649-4623-95a2-e0635e51b681</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>1808de0b-0649-4623-95a2-e0635e51b681</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerURL</key>
+          <string>https://dnsse.alekberg.net/dns-query</string>
+        </dict>
+      </dict>
+    </array>
+  </dict>
+</plist>
