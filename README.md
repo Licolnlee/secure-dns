@@ -1,118 +1,118 @@
-English | [简体中文](https://github.com/francis-zhao/secure-dns/blob/master/README.cmn-CN.md) | [繁體中文](https://github.com/francis-zhao/secure-dns/blob/master/README.cmn-TW.md)
+[<kbd>**`* 简体中文 *`**</kbd>](https://github.com/francis-zhao/secure-dns#readme) | [<kbd>繁體中文</kbd>](https://github.com/francis-zhao/secure-dns/blob/master/README.cmn-TW.md) | [<kbd>English</kbd>](https://github.com/francis-zhao/secure-dns/blob/master/README.en.md)
 
-# Secure DNS
+# 安全 DNS
 
-## Intro
+## 简介
 
-This repo is a fork of [paulmillr/encrypted-dns](https://github.com/paulmillr/encrypted-dns). It contains configuration profiles of [DNS over HTTPS (DoH)](https://en.wikipedia.org/wiki/DNS_over_HTTPS) and [DNS over TLS (DoT)](https://en.wikipedia.org/wiki/DNS_over_TLS) for Apple devices.
+此仓库是 [paulmillr/encrypted-dns](https://github.com/paulmillr/encrypted-dns) 的一个分支，主要存放了用于苹果设备的 [DNS over HTTPS (DoH)](https://zh.wikipedia.org/wiki/DNS_over_HTTPS) 和 [DNS over TLS (DoT)](https://zh.wikipedia.org/wiki/DNS_over_TLS) 配置描述文件。
 
-Compared with the original repo, all profiles of this fork have been reassigned unique UUIDs, and all DoH and DoT configurations of the same provider are integrated in one file, which makes it easier to switch and manage in the system settings.
+相比原仓库，此分支的所有描述文件均重新分配了独立的 UUID，且将同一供应商的所有 DoH 和 DoT 配置集成在一个文件中，可以更方便地在系统设置中随时切换和管理。
 
-### Caveats
+### 注意事项
 
-On devices that support HTTP/3, DNS over HTTP/3 (DoH3) seems to work faster & better than DoT judging from the [Google's article](https://security.googleblog.com/2022/07/dns-over-http3-in-android.html).
+根据谷歌[这篇文章](https://security.googleblog.com/2022/07/dns-over-http3-in-android.html)的介绍，在支持 HTTP/3 的设备上，DNS over HTTP/3 (DoH3) 比 DoT 的性能更优。
 
-Starting from iOS & iPadOS 15.5, [Wi-Fi captive portals](https://en.wikipedia.org/wiki/Captive_portal) in cafes, hotels, airports are exempted by Apple from eDNS rules; to simplify authentication. This is good news. There are still some other issues; we can't fix them, only Apple can:
+从 iOS 和 iPadOS 15.5 开始，为了简化咖啡厅、宾馆、机场等公共场所无线网络的身份认证，苹果将这些无线网络的[强制登录门户](https://zh.wikipedia.org/wiki/%E5%BC%BA%E5%88%B6%E9%97%A8%E6%88%B7)加入到了加密 DNS 排除规则中。这是个好消息，但还有一些其他问题我们无法修复，只有等苹果来解决：
 
-- eDNS gets disabled: [Little Snitch & Lulu](https://github.com/paulmillr/encrypted-dns/issues/13), [VPN](https://github.com/paulmillr/encrypted-dns/issues/18)
-- Some traffic is exempt from eDNS: [Terminal / App Store](https://github.com/paulmillr/encrypted-dns/issues/22), [Chrome](https://github.com/paulmillr/encrypted-dns/issues/19)
+- 无法启用加密 DNS：[Little Snitch & Lulu](https://github.com/paulmillr/encrypted-dns/issues/13)、[VPN](https://github.com/paulmillr/encrypted-dns/issues/18)
+- 部分流量绕过加密 DNS：[终端和 App Store](https://github.com/paulmillr/encrypted-dns/issues/22)、[Chrome 浏览器](https://github.com/paulmillr/encrypted-dns/issues/19)
 
-If you need even more privacy, check out [encrypted-dns over TOR](https://github.com/alecmuffett/dohot).
+如果你需要更进一步的隐私保护，请查看[使用 Tor 网络的加密 DNS](https://github.com/alecmuffett/dohot)。
 
-## Providers
+## 供应商
 
-`Censorship=yes` means the profile will not send true information about `hostname=IP` relation for some hosts.
+“`审查=是`”表示描述文件不会发送某些主机“`主机名=IP`”关系的真实信息。
 
-| Name                                                 | Region | Censorship | Notes                                                                                                     | Install link                        |
-| ---------------------------------------------------- | ------ | ---------- | --------------------------------------------------------------------------------------------------------- | ----------------------------------- |
-| [360 Security DNS][360-security-dns]                 | 🇨🇳     | Yes        | Operated by 360 Digital Security Group                                                                    | [DoH/DoT][360-security-dns-profile] |
-| [AdGuard DNS Default][adguard-dns-default]           | 🇷🇺     | Yes        | Operated by AdGuard Software Ltd. Blocks ads, tracking & phishing                                         | [DoH/DoT][adguard-dns-profile]      |
-| [AdGuard DNS Family Protection][adguard-dns-family]  | 🇷🇺     | Yes        | Operated by AdGuard Software Ltd. Blocks `Default` + malware & adult content                              | [DoH/DoT][adguard-dns-profile]      |
-| [AdGuard DNS Non-filtering][adguard-dns-unfiltered]  | 🇷🇺     | No         | Operated by AdGuard Software Ltd. Non-filtering                                                           | [DoH/DoT][adguard-dns-profile]      |
-| [Alekberg Encrypted DNS][alekberg-dns]               | 🇳🇱     | No         | Independent                                                                                               | [DoH][alekberg-dns-profile]         |
-| [Aliyun Public DNS][aliyun-dns]                      | 🇨🇳     | No         | Operated by Alibaba Cloud Ltd.                                                                            | [DoH/DoT][aliyun-dns-profile]       |
-| [BlahDNS CDN Filtered][blahdns]                      | 🇺🇸     | Yes        | Independent. Blocks ads, tracking & malware                                                               | [DoH/DoT][blahdns-profile]          |
-| [BlahDNS CDN Unfiltered][blahdns]                    | 🇺🇸     | No         | Independent. Non-filtering                                                                                | [DoH/DoT][blahdns-profile]          |
-| [BlahDNS Finland][blahdns]                           | 🇫🇮     | Yes        | Independent. Blocks ads, tracking & malware                                                               | [DoH/DoT][blahdns-profile]          |
-| [BlahDNS Germany][blahdns]                           | 🇩🇪     | Yes        | Independent. Blocks ads, tracking & malware                                                               | [DoH/DoT][blahdns-profile]          |
-| [BlahDNS Japan][blahdns]                             | 🇯🇵     | Yes        | Independent. Blocks ads, tracking & malware                                                               | [DoH/DoT][blahdns-profile]          |
-| [BlahDNS Singapore][blahdns]                         | 🇸🇬     | Yes        | Independent. Blocks ads, tracking & malware                                                               | [DoH/DoT][blahdns-profile]          |
-| [BlahDNS Switzerland][blahdns]                       | 🇨🇭     | Yes        | Independent. Blocks ads, tracking & malware                                                               | [DoH/DoT][blahdns-profile]          |
-| [Canadian Shield Private][canadian-shield]           | 🇨🇦     | No         | Operated by the Canadian Internet Registration Authority (CIRA)                                           | [DoH/DoT][canadian-shield-profile]  |
-| [Canadian Shield Protected][canadian-shield]         | 🇨🇦     | Yes        | Operated by the Canadian Internet Registration Authority (CIRA). Blocks malware & phishing                | [DoH/DoT][canadian-shield-profile]  |
-| [Canadian Shield Family][canadian-shield]            | 🇨🇦     | Yes        | Operated by the Canadian Internet Registration Authority (CIRA). Blocks malware, phishing & adult content | [DoH/DoT][canadian-shield-profile]  |
-| [Cloudflare 1.1.1.1][cloudflare-dns]                 | 🇺🇸     | No         | Operated by Cloudflare Inc.                                                                               | [DoH/DoT][cloudflare-dns-profile]   |
-| [Cloudflare 1.1.1.1 Security][cloudflare-dns-family] | 🇺🇸     | Yes        | Operated by Cloudflare Inc. Blocks malware & phishing                                                     | [DoH/DoT][cloudflare-dns-profile]   |
-| [Cloudflare 1.1.1.1 Family][cloudflare-dns-family]   | 🇺🇸     | Yes        | Operated by Cloudflare Inc. Blocks malware, phishing & adult content                                      | [DoH/DoT][cloudflare-dns-profile]   |
-| [DNSPod Public DNS][dnspod-dns]                      | 🇨🇳     | No         | Operated by DNSPod Inc., a Tencent Cloud Company                                                          | [DoH/DoT][dnspod-dns-profile]       |
-| [Google Public DNS][google-dns]                      | 🇺🇸     | No         | Operated by Google LLC                                                                                    | [DoH/DoT][google-dns-profile]       |
-| [keweonDNS][keweondns]                               | 🇩🇪     | No         | Operated by Aviontex. Blocks ads & tracking                                                               | [DoH/DoT][keweondns-profile]        |
-| [Mullvad DNS][mullvad-dns]                           | 🇸🇪     | Yes        | Operated by Mullvad VPN AB                                                                                | [DoH/DoT][mullvad-dns-profile]      |
-| [Mullvad DNS Adblock][mullvad-dns]                   | 🇸🇪     | Yes        | Operated by Mullvad VPN AB. Blocks ads & tracking                                                         | [DoH/DoT][mullvad-dns-profile]      |
-| [NextDNS][nextdns]                                   | 🇺🇸     | No         | Operated by NextDNS Inc. Customizable                                                                     | [DoH/DoT][nextdns-profile]          |
-| [OpenDNS Standard][opendns]                          | 🇺🇸     | No         | Operated by Cisco OpenDNS LLC                                                                             | [DoH][opendns-profile]              |
-| [OpenDNS FamilyShield][opendns]                      | 🇺🇸     | Yes        | Operated by Cisco OpenDNS LLC. Blocks malware & adult content                                             | [DoH][opendns-profile]              |
-| [Quad9][quad9-dns]                                   | 🇨🇭     | Yes        | Operated by Quad9 Foundation. Blocks malware                                                              | [DoH/DoT][quad9-dns-profile]        |
-| [Quad9 w/ ECS][quad9-dns]                            | 🇨🇭     | Yes        | Operated by Quad9 Foundation. Supports ECS. Blocks malware                                                | [DoH/DoT][quad9-dns-profile]        |
-| [Quad101][quad101-dns]                               | 🇹🇼     | No         | Operated by Taiwan Network Information Center (TWNIC)                                                     | [DoH/DoT][quad101-dns-profile]      |
-| [Tiarap][tiarap-dns]                                 | 🇸🇬 🇺🇸  | Yes        | Operated by Tiarap Inc. Blocks ads, tracking, phising & malware                                           | [DoH/DoT][tiarap-dns-profile]       |
+| 名称                                             | 区域  | 审查 | 备注                                                               | 安装链接                            |
+| ------------------------------------------------ | ----- | ---- | ------------------------------------------------------------------ | ----------------------------------- |
+| [360 安全 DNS][360-security-dns]                 | 🇨🇳    | 是   | 由 360 数字安全集团运营                                            | [DoH/DoT][360-security-dns-profile] |
+| [AdGuard DNS 默认][adguard-dns-default]          | 🇷🇺    | 是   | 由 AdGuard 运营，拦截广告、跟踪器和钓鱼网站                        | [DoH/DoT][adguard-dns-profile]      |
+| [AdGuard DNS 家庭保护][adguard-dns-family]       | 🇷🇺    | 是   | 由 AdGuard 运营，除默认规则外，额外拦截恶意软件和成人内容          | [DoH/DoT][adguard-dns-profile]      |
+| [AdGuard DNS 无过滤][adguard-dns-unfiltered]     | 🇷🇺    | 否   | 由 AdGuard 运营，无过滤                                            | [DoH/DoT][adguard-dns-profile]      |
+| [Alekberg 加密 DNS][alekberg-dns]                | 🇳🇱    | 否   | 由个人提供                                                         | [DoH][alekberg-dns-profile]         |
+| [阿里云公共 DNS][aliyun-dns]                     | 🇨🇳    | 否   | 由阿里云计算运营                                                   | [DoH/DoT][aliyun-dns-profile]       |
+| [BlahDNS CDN 过滤][blahdns]                      | 🇺🇸    | 是   | 由个人提供，拦截广告、跟踪器和恶意软件                             | [DoH/DoT][blahdns-profile]          |
+| [BlahDNS CDN 无过滤][blahdns]                    | 🇺🇸    | 否   | 由个人提供，无过滤                                                 | [DoH/DoT][blahdns-profile]          |
+| [BlahDNS 芬兰][blahdns]                          | 🇫🇮    | 是   | 由个人提供，拦截广告、跟踪器和恶意软件                             | [DoH/DoT][blahdns-profile]          |
+| [BlahDNS 德国][blahdns]                          | 🇩🇪    | 是   | 由个人提供，拦截广告、跟踪器和恶意软件                             | [DoH/DoT][blahdns-profile]          |
+| [BlahDNS 日本][blahdns]                          | 🇯🇵    | 是   | 由个人提供，拦截广告、跟踪器和恶意软件                             | [DoH/DoT][blahdns-profile]          |
+| [BlahDNS 新加坡][blahdns]                        | 🇸🇬    | 是   | 由个人提供，拦截广告、跟踪器和恶意软件                             | [DoH/DoT][blahdns-profile]          |
+| [BlahDNS 瑞士][blahdns]                          | 🇨🇭    | 是   | 由个人提供，拦截广告、跟踪器和恶意软件                             | [DoH/DoT][blahdns-profile]          |
+| [Canadian Shield 隐私][canadian-shield]          | 🇨🇦    | 否   | 由加拿大互联网注册局 (CIRA) 运营                                   | [DoH/DoT][canadian-shield-profile]  |
+| [Canadian Shield 保护][canadian-shield]          | 🇨🇦    | 是   | 由加拿大互联网注册局 (CIRA) 运营，拦截恶意软件和钓鱼网站           | [DoH/DoT][canadian-shield-profile]  |
+| [Canadian Shield 家庭][canadian-shield]          | 🇨🇦    | 是   | 由加拿大互联网注册局 (CIRA) 运营，拦截恶意软件、钓鱼网站和成人内容 | [DoH/DoT][canadian-shield-profile]  |
+| [Cloudflare 1.1.1.1][cloudflare-dns]             | 🇺🇸    | 否   | 由 Cloudflare 运营                                                 | [DoH/DoT][cloudflare-dns-profile]   |
+| [Cloudflare 1.1.1.1 安全][cloudflare-dns-family] | 🇺🇸    | 是   | 由 Cloudflare 运营，拦截恶意软件和钓鱼网站                         | [DoH/DoT][cloudflare-dns-profile]   |
+| [Cloudflare 1.1.1.1 家庭][cloudflare-dns-family] | 🇺🇸    | 是   | 由 Cloudflare 运营，拦截恶意软件、钓鱼网站和成人内容               | [DoH/DoT][cloudflare-dns-profile]   |
+| [DNSPod 公共 DNS][dnspod-dns]                    | 🇨🇳    | 否   | 由腾讯云计算旗下 DNSPod 运营                                       | [DoH/DoT][dnspod-dns-profile]       |
+| [谷歌公共 DNS][google-dns]                       | 🇺🇸    | 否   | 由谷歌运营                                                         | [DoH/DoT][google-dns-profile]       |
+| [keweonDNS][keweondns]                           | 🇩🇪    | 否   | 由 Aviontex. 拦截广告和跟踪器                                      | [DoH/DoT][keweondns-profile]        |
+| [Mullvad DNS][mullvad-dns]                       | 🇸🇪    | 是   | 由 Mullvad VPN 运营                                                | [DoH/DoT][mullvad-dns-profile]      |
+| [Mullvad DNS 广告过滤][mullvad-dns]              | 🇸🇪    | 是   | 由 Mullvad VPN 运营，拦截广告和跟踪器                              | [DoH/DoT][mullvad-dns-profile]      |
+| [NextDNS][nextdns]                               | 🇺🇸    | 否   | 由 NextDNS 运营，可自定义拦截                                      | [DoH/DoT][nextdns-profile]          |
+| [OpenDNS 标准][opendns]                          | 🇺🇸    | 否   | 由思科 OpenDNS 运营                                                | [DoH][opendns-profile]              |
+| [OpenDNS 家庭防护][opendns]                      | 🇺🇸    | 是   | 由思科 OpenDNS 运营，拦截恶意软件和成人内容                        | [DoH][opendns-profile]              |
+| [Quad9][quad9-dns]                               | 🇨🇭    | 是   | 由 Quad9 基金会运营，拦截恶意软件                                  | [DoH/DoT][quad9-dns-profile]        |
+| [Quad9 ECS][quad9-dns]                           | 🇨🇭    | 是   | 由 Quad9 基金会运营，支持 ECS，拦截恶意软件                        | [DoH/DoT][quad9-dns-profile]        |
+| [Quad101][quad101-dns]                           | 🇹🇼    | 否   | 由台湾网络资讯中心 (TWNIC) 运营                                    | [DoH/DoT][quad101-dns-profile]      |
+| [Tiarap][tiarap-dns]                             | 🇸🇬 🇺🇸 | 是   | 由 Tiarap 运营，拦截广告、跟踪器、钓鱼网站和恶意软件               | [DoH/DoT][tiarap-dns-profile]       |
 
-## Installation
+## 安装
 
-To make settings work across all apps in **iOS**, **iPadOS** & **macOS**, you'll need to install configuration profile. This profile would tell operating system to use DoH / DoT. Note: it's not enough to simply set server IPs in System Preferences — you need to install a profile.
+要使设置在 **iOS**、**iPadOS** 和 **macOS** 中所有的应用程序上生效，你需要安装配置描述文件。此文件将指引操作系统使用 DoH 或 DoT。注意：只在系统无线局域网设置中设置 DNS 服务器 IP 是不够的——你需要安装描述文件。
 
-iOS / iPadOS: Open the mobileconfig file in GitHub by using Safari (other browsers will just download the file and won't ask for installation), and then click/tap on "Allow" button. The profile should download. Go to **System Settings => General => VPN, DNS & Device Management**, select downloaded profile and tap the "Install" button.
+iOS / iPadOS：使用 Safari 浏览器（其他浏览器只会下载该文件，不会弹出安装提示）打开 GitHub 上的 mobileconfig 文件，然后点击“允许”按钮，描述文件将完成下载。打开 **系统设置 => 通用 => VPN、DNS 与设备管理**，选择已下载的描述文件并点击“安装”按钮。
 
-macOS [(official docs)](https://support.apple.com/guide/mac-help/mh35561/):
+macOS [（官方文档）](https://support.apple.com/zh-cn/guide/mac-help/mh35561/)：
 
-1. Download and save the profile. After save, rename it to be in format: `NAME.mobileconfig`, not NAME.txt, or so
-2. Choose Apple menu > System Settings, click Privacy and Security in the sidebar, then click Profiles on the right. (You may need to scroll down.)
-   You may be asked to supply your password or other information during installation.
-3. In the Downloaded section, double-click the profile.
-4. Review the profile contents then click Continue, Install or Enroll to install the profile.
+1. 下载并保存描述文件，将其重命名为 `NAME.mobileconfig`，而不是 txt 之类的扩展名。
+2. 选取苹果菜单 >“系统设置”，点按边栏中的“隐私和安全性” ，然后点按右侧的“描述文件”。（你可能需要向下滚动。）
+   安装期间，系统可能会要求你提供密码或其他信息。
+3. 在“已下载”部分中，连按描述文件。
+4. 检查描述文件内容，然后点按“继续”、“安装”或“注册”以安装描述文件。
 
-   If an earlier version of a profile is already installed on your Mac, the settings in the updated version replace the previous ones.
+   如果 Mac 上已安装了较早版本的描述文件，其设置将替换为更新版本中的设置。
 
-## Scope
+## 生效范围
 
-Currently, all profiles are configured as system-wide, if you want to try user-wide, just delete the following two lines in the profile or change `System` to `User`.
+目前所有的描述文件都被配置为系统全局范围生效，如果你想尝试用户范围生效，请将描述文件中下面两行内容删除，或将 `System` 改为 `User`。
 
 ```xml
 <key>PayloadScope</key>
 <string>System</string>
 ```
 
-## Signed Profiles
+## 签名版描述文件
 
-At present, no signed version profiles is provided. If you are obsessed with the green authentication icon on the installation popup, you may consider going [here](https://github.com/paulmillr/encrypted-dns/tree/master/signed) to download the signed version profiles provided by [@Candygoblen123](https://github.com/Candygoblen123), but the content may be slightly outdated.
+目前没有提供任何签名版的描述文件，如果你对描述文件安装界面的绿色签名认证图标有执念，可以考虑前往[这里](https://github.com/paulmillr/encrypted-dns/tree/master/signed)下载由 [@Candygoblen123](https://github.com/Candygoblen123) 提供的签名版描述文件，但内容可能会更新不及时。
 
-To verify resolver IPs and hostnames, compare mobileconfig files to their documentation URLs. Internal workings of the profiles are described on [developer.apple.com](https://developer.apple.com/documentation/devicemanagement/dnssettings). In order to verify signed mobileconfigs, you will need to download them to your computer and open them in a text editor, because signing profiles makes GitHub think that they are binary files.
+如要验证 DNS 解析器的 IP 和主机名，请将描述文件内容与其官方网站的文档进行比对，描述文件内部结构和属性在[苹果开发者网站](https://developer.apple.com/documentation/devicemanagement/dnssettings)上有详细讲解。如要验证签名版的描述文件，请将其下载到本地后用文本编辑器打开，因为 GitHub 会将签名版描述文件视为二进制文件而无法直接查看。
 
-## Creating a new profile
+## 创建新描述文件
 
-You can use [this tool](https://dns.notjakob.com/tool.html) to create a personal profile online.
+你可以使用这个[工具](https://dns.notjakob.com/tool.html)在线创建你自己的描述文件。
 
-Profiles are basically XML text files. If you're interested in contributing a new profile, please copy an existing one and change its UUID, make sure you update README with new profile's info.
+描述文件本质上是 XML 文本文件，如果你有兴趣提交新的描述文件，将现有的描述文件复制一份并修改其 UUID 即可，请确保在本 README 文件中更新描述文件的相关信息。
 
-In addition to generating online, there are many other ways to generate a random UUID:
+随机 UUID 除了可以通过网站在线生成，还有很多其他获取方法：
 
-- Press `F12` to open DevTools in the browser, run this code in the console
+- 在浏览器中按下 `F12` 打开“开发人员工具”，在控制台中运行这段代码
 
 ```javascript
 crypto.randomUUID();
 ```
 
-- Run these commands in the macOS / Linux terminal
+- 在 macOS / Linux 终端中运行此命令
 
 ```sh
-# Works both in macOS & Linux
+# 适用于 macOS 和 Linux
 uuidgen
 
-# Works in Linux
+# 适用于 Linux
 cat /proc/sys/kernel/random/uuid
 ```
 
-- Run this cmdlet in Powershell
+- 在 Powershell 中运行此命令
 
 ```powershell
 New-Guid
@@ -135,7 +135,7 @@ New-Guid
 [cloudflare-dns]: https://developers.cloudflare.com/1.1.1.1/encryption/
 [cloudflare-dns-family]: https://developers.cloudflare.com/1.1.1.1/setup/#1111-for-families
 [cloudflare-dns-profile]: https://github.com/francis-zhao/secure-dns/raw/master/profiles/cloudflare-dns.mobileconfig
-[dnspod-dns]: https://www.dnspod.com/products/public.dns
+[dnspod-dns]: https://www.dnspod.cn/products/publicdns
 [dnspod-dns-profile]: https://github.com/francis-zhao/secure-dns/raw/master/profiles/dnspod-dns.mobileconfig
 [google-dns]: https://developers.google.com/speed/public-dns/docs/secure-transports
 [google-dns-profile]: https://github.com/francis-zhao/secure-dns/raw/master/profiles/google-dns.mobileconfig
@@ -149,7 +149,7 @@ New-Guid
 [opendns-profile]: https://github.com/francis-zhao/secure-dns/raw/master/profiles/opendns.mobileconfig
 [quad9-dns]: https://www.quad9.net/news/blog/doh-with-quad9-dns-servers/
 [quad9-dns-profile]: https://github.com/francis-zhao/secure-dns/raw/master/profiles/quad9-dns.mobileconfig
-[quad101-dns]: https://101.101.101.101/index_en.html
+[quad101-dns]: https://101.101.101.101/
 [quad101-dns-profile]: https://github.com/francis-zhao/secure-dns/raw/master/profiles/quad101-dns.mobileconfig
 [tiarap-dns]: https://doh.tiar.app
 [tiarap-dns-profile]: https://github.com/francis-zhao/secure-dns/raw/master/profiles/tiarap-dns.mobileconfig

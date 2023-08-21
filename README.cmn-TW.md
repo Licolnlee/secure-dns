@@ -1,4 +1,4 @@
-[English](https://github.com/francis-zhao/secure-dns/) | [简体中文](https://github.com/francis-zhao/secure-dns/blob/master/README.cmn-CN.md) | 繁體中文
+[<kbd>简体中文</kbd>](https://github.com/francis-zhao/secure-dns#readme) | [<kbd>**`* 繁體中文 *`**</kbd>](https://github.com/francis-zhao/secure-dns/blob/master/README.cmn-TW.md) | [<kbd>English</kbd>](https://github.com/francis-zhao/secure-dns/blob/master/README.en.md)
 
 # 安全 DNS
 
