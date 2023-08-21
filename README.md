@@ -4,7 +4,7 @@ English | [简体中文](https://github.com/francis-zhao/secure-dns/blob/master/
 
 ## Intro
 
-This repo is a fork of [paulmillr/encrypted-dns](https://github.com/paulmillr/encrypted-dns). It contains configuration profiles of Apple devices for [DNS over HTTPS (DoH)](https://en.wikipedia.org/wiki/DNS_over_HTTPS) and [DNS over TLS (DoT)](https://en.wikipedia.org/wiki/DNS_over_TLS).
+This repo is a fork of [paulmillr/encrypted-dns](https://github.com/paulmillr/encrypted-dns). It contains configuration profiles of [DNS over HTTPS (DoH)](https://en.wikipedia.org/wiki/DNS_over_HTTPS) and [DNS over TLS (DoT)](https://en.wikipedia.org/wiki/DNS_over_TLS) for Apple devices.
 
 Compared with the original repo, all profiles of this fork have been reassigned unique UUIDs, and all DoH and DoT configurations of the same provider are integrated in one file, which makes it easier to switch and manage in the system settings.
 
