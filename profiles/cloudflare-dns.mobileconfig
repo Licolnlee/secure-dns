@@ -69,7 +69,7 @@
             <string>1.0.0.1</string>
           </array>
           <key>ServerName</key>
-          <string>1dot1dot1dot1.cloudflare-dns.com</string>
+          <string>one.one.one.one</string>
         </dict>
       </dict>
       <!-- Cloudflare 1.1.1.1 Security (DoH) -->
