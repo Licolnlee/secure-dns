@@ -18,7 +18,7 @@
     <integer>1</integer>
     <key>PayloadContent</key>
     <array>
-      <!-- Quad101 (DoH) -->
+      <!-- LicolnleeDNS (DoH) -->
       <dict>
         <key>PayloadDisplayName</key>
         <string>LicolnleeDNS (DoH)</string>
