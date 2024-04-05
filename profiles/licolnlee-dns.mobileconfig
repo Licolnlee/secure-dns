@@ -5,7 +5,7 @@
     <key>PayloadDisplayName</key>
     <string>LicolnleeDNS</string>
     <key>PayloadDescription</key>
-    <string>在此裝置上使用由licolnleeDNS提供的加密 DNS 解析服務。</string>
+    <string>在此裝置上使用由LicolnleeDNS提供的加密 DNS 解析服務。</string>
     <key>PayloadIdentifier</key>
     <string>com.apple.profile.4f3f10f3-0da7-4070-8bfc-7c90e8779bc1</string>
     <key>PayloadScope</key>
@@ -35,27 +35,7 @@
           <key>DNSProtocol</key>
           <string>HTTPS</string>
           <key>ServerURL</key>
-          <string>https://dns.licolnlee.icu:8443/dns-query</string>
-        </dict>
-      </dict>
-      <!-- Quad101 (DoT) -->
-      <dict>
-        <key>PayloadDisplayName</key>
-        <string>LicolnleeDNS (DoT)</string>
-        <key>PayloadIdentifier</key>
-        <string>com.apple.dns.1e3b0ed7-6c5b-432e-a092-75abace99aba</string>
-        <key>PayloadType</key>
-        <string>com.apple.dnsSettings.managed</string>
-        <key>PayloadUUID</key>
-        <string>1e3b0ed7-6c5b-432e-a092-75abace99aba</string>
-        <key>PayloadVersion</key>
-        <integer>1</integer>
-        <key>DNSSettings</key>
-        <dict>
-          <key>DNSProtocol</key>
-          <string>TLS</string>
-          <key>ServerName</key>
-          <string>dns.licolnlee.icu</string>
+          <string>h3://dns.licolnlee.icu:43902/dns-query/c5cb9e76-3051-4edc-a74c-f502f4eec872</string>
         </dict>
       </dict>
     </array>
