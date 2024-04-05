@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+  <dict>
+    <key>PayloadDisplayName</key>
+    <string>LicolnleeDNS</string>
+    <key>PayloadDescription</key>
+    <string>在此裝置上使用由LicolnleeDNS提供的加密 DNS 解析服務。</string>
+    <key>PayloadIdentifier</key>
+    <string>com.apple.profile.9fed1a28-b5de-4f58-8c0a-85124a265281</string>
+    <key>PayloadScope</key>
+    <string>System</string>
+    <key>PayloadType</key>
+    <string>Configuration</string>
+    <key>PayloadUUID</key>
+    <string>9fed1a28-b5de-4f58-8c0a-85124a265281</string>
+    <key>PayloadVersion</key>
+    <integer>1</integer>
+    <key>PayloadContent</key>
+    <array>
+      <!-- LicolnleeDNS (DoH) -->
+      <dict>
+        <key>PayloadDisplayName</key>
+        <string>LicolnleeDNS (DoH)</string>
+        <key>PayloadIdentifier</key>
+        <string>com.apple.dns.825ae138-4f75-4763-be9d-abdb2b24fb32</string>
+        <key>PayloadType</key>
+        <string>com.apple.dnsSettings.managed</string>
+        <key>PayloadUUID</key>
+        <string>825ae138-4f75-4763-be9d-abdb2b24fb32</string>
+        <key>PayloadVersion</key>
+        <integer>1</integer>
+        <key>DNSSettings</key>
+        <dict>
+          <key>DNSProtocol</key>
+          <string>HTTPS</string>
+          <key>ServerURL</key>
+          <string>https://dns.licolnlee.icu:43902/dns-query/cc5453f5-5cb7-4186-9844-64981c9e3228</string>
+        </dict>
+      </dict>
+    </array>
+  </dict>
+</plist>
