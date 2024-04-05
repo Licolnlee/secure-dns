@@ -35,7 +35,7 @@
           <key>DNSProtocol</key>
           <string>HTTPS</string>
           <key>ServerURL</key>
-          <string>h3://dns.licolnlee.icu:43902/dns-query/c5cb9e76-3051-4edc-a74c-f502f4eec872</string>
+          <string>https://dns.licolnlee.icu:43902/dns-query/c5cb9e76-3051-4edc-a74c-f502f4eec872</string>
         </dict>
       </dict>
     </array>
