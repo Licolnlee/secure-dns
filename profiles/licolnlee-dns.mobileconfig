@@ -34,10 +34,6 @@
         <dict>
           <key>DNSProtocol</key>
           <string>HTTPS</string>
-          <key>ServerAddresses</key>
-          <array>
-            <string>39.103.131.75</string>
-          </array>
           <key>ServerURL</key>
           <string>https://dns.licolnlee.icu:8443/dns-query</string>
         </dict>
@@ -58,10 +54,6 @@
         <dict>
           <key>DNSProtocol</key>
           <string>TLS</string>
-          <key>ServerAddresses</key>
-          <array>
-            <string>39.103.131.75</string>
-          </array>
           <key>ServerName</key>
           <string>dns.licolnlee.icu</string>
         </dict>
