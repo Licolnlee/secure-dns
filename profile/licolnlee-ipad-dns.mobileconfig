@@ -34,6 +34,13 @@
         <dict>
           <key>DNSProtocol</key>
           <string>HTTPS</string>
+          <key>ServerAddresses</key>
+          <array>
+            <string>2400:3200::1</string>
+            <string>2400:3200:baba::1</string>
+            <string>223.5.5.5</string>
+            <string>223.6.6.6</string>
+          </array>
           <key>ServerURL</key>
           <string>https://dns.licolnlee.icu:60911/6cQIV437bl/cc5453f5-5cb7-4186-9844-64981c9e3228</string>
         </dict>
